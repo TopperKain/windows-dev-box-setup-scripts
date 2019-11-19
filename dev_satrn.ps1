@@ -28,13 +28,13 @@ executeScript "RemoveDefaultApps.ps1";
 executeScript "CommonDevTools.ps1";
 executeScript "Browsers.ps1";
 
-
+choco install chocolatey-visualstudio.extension
 choco install visualstudio2019-workload-node
-choco install visualstudio2019-workload-azure
-choco install visualstudio2019-workload-data
+choco install visualstudio2019-workload-azure  --package-parameters "--includeRecommended --includeOptional --passive --locale en-US"
+choco install visualstudio2019-workload-data  --package-parameters "--includeRecommended --includeOptional --passive --locale en-US"
 choco install visualstudio2019-workload-netcoretools
-choco install visualstudio2019-workload-netweb
-choco install visualstudio2019-workload-office
+choco install visualstudio2019-workload-netweb --package-parameters "--includeRecommended --includeOptional --passive --locale en-US"
+choco install visualstudio2019-workload-office  --package-parameters "--includeRecommended --includeOptional --passive --locale en-US"
 choco install visualstudio2019-workload-netcrossplat
 choco install visualstudio2019-workload-universal
 
@@ -43,6 +43,8 @@ choco install -y powershell-core
 choco install -y azure-cli
 Install-Module -Force Az
 choco install -y microsoftazurestorageexplorer
+
+choco install microsoft-teams
 
 Enable-UAC
 Enable-MicrosoftUpdate
